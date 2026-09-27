@@ -1,0 +1,84 @@
+html {
+    height: 100%;
+    width: 100%;    
+}
+
+@font-face {
+    font-family: 'oliver';
+    src: url('Oliver-Regular.ttf') 
+    format("truetype");
+}
+
+h1{
+    color: #29232F;
+    text-align: center;
+}
+
+body {
+        font-family: 'oliver';
+    background: linear-gradient(
+       135deg,
+        #5A4A68,
+        #3F344A,
+        #665574,
+        #5A4A68
+    );
+    background-size: 300% 300%;
+    animation: movingBackground 12s ease infinite;
+}
+
+@keyframes movingBackground {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+
+.bats {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    filter: saturate(0.8) contrast(1.1);
+
+    box-shadow:
+        0 0 15px rgba(41, 35, 47, 0.5),
+        0 0 35px rgba(163, 149, 177, 0.4);
+}
+
+
+.answerbuttons{
+    text-align: center;
+    word-spacing: 1px;
+}
+
+.links{
+    display: inline-block;
+    text-decoration: none;
+    color: #29232F;
+    font-size: 20px;
+    padding: 10px 26px;
+    border: 2px solid #29232F;
+    border-radius: 20px;
+    background-color: #A395B1;
+
+    box-shadow: 0 5px 15px rgba(41, 35, 47, 0.25);
+
+    transition: 0.3s ease;
+}
+
+.links:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(41, 35, 47, 0.35);
+}
+
+    a:hover{
+    color:whitesmoke;
+    border: 2px solid whitesmoke;
+}
