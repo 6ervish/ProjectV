@@ -1,6 +1,7 @@
 html {
     height: 100%;
-    width: 100%;    
+    width: 100%; 
+    background-color: #40344D;   
 }
 
 @font-face {
@@ -12,6 +13,8 @@ html {
 h1{
     color: #29232F;
     text-align: center;
+    font-size: 42px;
+    margin-top: 50px;
 }
 
 body {
@@ -25,6 +28,9 @@ body {
     );
     background-size: 300% 300%;
     animation: movingBackground 12s ease infinite;
+    background-color: #40344D;
+    color: #29232F;
+    padding: 40px 20px;
 }
 
 @keyframes movingBackground {
@@ -39,8 +45,10 @@ body {
 
 
 .bats {
-    width: 80%;
-    max-width: 300px;
+    width: 90%;
+    max-width: 380px;
+    margin: 35px auto;
+    margin-top: 50px;
     height: auto;
     display: block;
     margin: 20px auto;
@@ -62,8 +70,8 @@ body {
     display: inline-block;
     text-decoration: none;
     color: #29232F;
-    font-size: 20px;
-    padding: 10px 26px;
+    font-size: 24px;
+    padding: 10px 32px;
     border: 2px solid #29232F;
     border-radius: 20px;
     background-color: #A395B1;
