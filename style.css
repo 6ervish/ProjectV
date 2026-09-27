@@ -30,12 +30,12 @@ body {
     background-size: 300% 300%;
     animation: movingBackground 12s ease infinite;
 
-    color: #29232F;
+    color: #6b686d;
 }
 
 
 h1 {
-    color: #29232F;
+    color: #141117;
     text-align: center;
     font-size: clamp(36px, 10vw, 52px);
     margin-top: 50px;
@@ -68,14 +68,14 @@ h1 {
     display: inline-block;
 
     text-decoration: none;
-    color: #29232F;
+    color: #141117;
 
     font-size: 24px;
 
     padding: 12px 32px;
     margin: 5px;
 
-    border: 2px solid #29232F;
+    border: 2px solid #141117;
     border-radius: 20px;
 
     background-color: #A395B1;
