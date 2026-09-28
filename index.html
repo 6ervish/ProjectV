@@ -1,24 +1,61 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="robots" content="noindex, nofollow">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="color-scheme" content="dark">
-	<title>Für Victoria</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<h1>Willst du meine Freundin sein?</h1>
-	
-	<img src="https://i.pinimg.com/736x/77/7e/b4/777eb4bbed09ffa8fb1e638f74e95040.jpg" class="bats">
-	
-	<div class="answerbuttons">
-		<a href="yes.html" class="links">jaaaa will ich</a>
-		<a href="no.html" class="links">nein 👎</a>
-	</div>
-	
-	<script src="script.js"></script>
-</body>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <title>Für Victoria</title>
+    <link rel="stylesheet" href="style.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+    <h1>Willst du meine Freundin sein?</h1>
+
+    <img src="https://i.pinimg.com/736x/77/7e/b4/777eb4bbed09ffa8fb1e638f74e95040.jpg" class="bats">
+
+    <div class="answerbuttons">
+        <a href="yes.html" class="links" id="yesButton">jaaaa will ich</a>
+        <a href="no.html" class="links" id="noButton">nein 👎</a>
+    </div>
+
+    <script>
+        const SUPABASE_URL = "https://abzopxhzzomxrdwbdamj.supabase.co";
+        const SUPABASE_KEY = "sb_publishable_iv0SVVF8E0P8PbTRm51M_Q_67083VfO";
+
+        const supabase = window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_KEY
+        );
+
+        async function saveAnswer(answer, targetPage) {
+            const { error } = await supabase
+                .from("answers")
+                .insert({ answer: answer });
+
+            if (error) {
+                console.error("Fehler beim Speichern:", error);
+                return;
+            }
+
+            window.location.href = targetPage;
+        }
+
+        document.getElementById("yesButton").addEventListener("click", function(event) {
+            event.preventDefault();
+            saveAnswer(true, "yes.html");
+        });
+
+        document.getElementById("noButton").addEventListener("click", function(event) {
+            event.preventDefault();
+            saveAnswer(false, "no.html");
+        });
+    </script>
+
+</body>
 </html>
+```
